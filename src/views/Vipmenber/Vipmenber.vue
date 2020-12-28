@@ -4,8 +4,8 @@
          <div class="top2"> 
              <img src="./logo.png" alt="">
          </div>
-         <p class="top3">用户昵称</p>
-         <p class="top4">修改标签 ></p>
+         <p class="top3">{{$store.state.personalInfo.nickName}}</p>
+         <p class="top4" @click="goPersonal()">修改资料 ></p>
        </div>
 
        <div class="x1">
@@ -30,7 +30,7 @@
            <van-cell is-link @click="showPopup">商品订单</van-cell>
        </div>
        <div>
-           <van-cell is-link @click="showPopup">账单</van-cell>
+           <van-cell is-link @click="goBill()">账单</van-cell>
        </div>
        <div>
            <van-cell is-link @click="showPopup">积分查询</van-cell>
@@ -39,7 +39,7 @@
            <van-cell is-link @click="showPopup">优惠卷</van-cell>
        </div>
        <div>
-           <van-cell is-link @click="showPopup">地址管理</van-cell>
+           <van-cell is-link @click="$router.push('/address')">地址管理</van-cell>
        </div>
        
        
@@ -66,6 +66,12 @@ export default {
   methods: {
     showPopup() {
     },
+    goPersonal(){
+        this.$router.push('/personal')
+    },
+    goBill(){
+        this.$router.push('/bill')
+    }
   },
   created(){
       this.$store.commit("setTitle","我的")

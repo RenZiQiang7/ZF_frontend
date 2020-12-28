@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="main">
         <div class="top">
         <van-dropdown-menu>
   <van-dropdown-item v-model="value1" :options="option1"/>
@@ -94,6 +94,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.main{
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
 .top{
     width: 100%;
     height: 30px;

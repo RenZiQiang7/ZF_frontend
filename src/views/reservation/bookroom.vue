@@ -4,7 +4,7 @@
           
       <h5>
         登别石水亭温泉酒店<span style="margin-left: 40px"
-          >大床房也要子富写</span
+          >{{res.name}}</span
         >
       </h5>
     </div>
@@ -163,14 +163,23 @@ export default {
       res:{}
     };
   },
+  watch:{
+      value:function(newVal){
+          this.pay=this.res.item.price*this.value
+      }
+  },
   created() {
       let res=this.$route.params;
       console.log(res);
       this.res=res;
+      this.$store.commit('setTitle',"预定客房")
+    
+      this.pay=this.res.item.price*this.value
   },
+
   methods:{
       onSubmit(){
-
+          this.$router.push({name:"pay",params:{money:this.pay}})
       },
     onChange(index) {
       this.showList = false;

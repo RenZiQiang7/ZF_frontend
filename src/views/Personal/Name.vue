@@ -1,22 +1,36 @@
 <template>
     <div class="k">
         <div class="k1">
-        姓名：<input type="text" placeholder="请输入你要修改的姓名">
+        姓名：<input type="text" placeholder="请输入你要修改的姓名" v-model="name">
         </div>
-        <button>保存修改</button>
+        <button @click="save()"> 保存修改</button>
     </div>
 </template>
 
 <script>
 export default {
+     data:function(){
+        return{
+            name:"",
+        }
+    },
     created(){
         this.$store.commit("setTitle","设置姓名")
+   
+    },
+     methods:{
+        save(){
+            this.$store.commit('setName',this.name);
+                 this.$router.push('/personal')
+        }
     }
 }
 </script>
 <style lang="scss" scoped>
 .k{
     position: relative;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 .k1{
     margin-top: 10px;

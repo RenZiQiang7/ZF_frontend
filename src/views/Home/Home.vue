@@ -9,7 +9,7 @@
         </van-swipe>
       </div>
       <div class="address">
-        <div><span>登别石水亭温泉酒店</span><button>预定</button></div>
+        <div><span>登别石水亭温泉酒店</span><button @click="goReserve()">预定</button></div>
         <div class="addre">
           <van-icon name="location" color="#2FB99E" />
           <span style="marginLeft: 10px"
@@ -118,7 +118,14 @@ export default {
       ],
     };
   },
-  created() {},
+  created() {
+    this.$store.commit("setTitle","首页");
+  },
+  methods:{
+    goReserve(){
+      this.$router.push('/reserve');
+    }
+  }
 };
 </script>
 

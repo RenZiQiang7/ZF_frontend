@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="main">
    <van-address-edit
   :area-list="areaList"
   show-postal
@@ -4079,8 +4079,10 @@ export default {
   this.$store.commit("setTitle","修改地址")
   },
   methods: {
+
     onSave() {
       Toast('save');
+      
     },
     onDelete() {
       
@@ -4101,3 +4103,10 @@ export default {
   },
 }
 </script>
+
+<style lang="scss" scoped>
+  .main{
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+</style>

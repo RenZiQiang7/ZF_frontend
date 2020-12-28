@@ -93,10 +93,10 @@ export default {
   },
   methods: {
     goRoomDetail(item){
-      this.$router.push({name:"roomdetail",params:{item,dateStart:this.dateStart,dateEnd:this.dateEnd}})
+      this.$router.push({name:"roomdetail",params:{item:item,dateStart:this.dateStart,dateEnd:this.dateEnd}})
     },
     goBookroom(item){
-      this.$router.push({name:"bookroom",params:{item,dateStart:this.dateStart,dateEnd:this.dateEnd}})
+      this.$router.push({name:"bookroom",params:{item:item,dateStart:this.dateStart,dateEnd:this.dateEnd}})
      
     },
     goMap() {

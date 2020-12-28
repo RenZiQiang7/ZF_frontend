@@ -110,19 +110,22 @@ export default {
   data() {
     return {
       res: [],
+      completeRes:[],
     };
   },
   created() {
     let res = this.$route.params.item;
+    this.completeRes=this.$route.params;
     this.res = res;
-    console.log(res);
+    console.log(this.completeRes);
+    this.$store.commit('setTitle',"客房详情")
   },
   methods: {
     succes() {
       Toast.success("已加入购物车");
     },
     gotoBookRoom(){
-        this.$router.push({name:"bookroom",params:{dateStart:this.$route.params.dateStart,dateEnd:this.$route.params.dateEnd}})
+        this.$router.push({name:"bookroom",params:this.completeRes})
     }
   },
 };

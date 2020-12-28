@@ -4,8 +4,8 @@
       <van-tabbar-item icon="wap-home" to="/home">首页</van-tabbar-item>
 
       <van-tabbar-item icon="shop" to="/reserve">客房预订</van-tabbar-item>
-      <van-tabbar-item icon="bag" to="/2">商品购买</van-tabbar-item>
-      <van-tabbar-item icon="manager" to="/3">我的</van-tabbar-item>
+      <van-tabbar-item icon="bag" to="/goodslist">商品购买</van-tabbar-item>
+      <van-tabbar-item icon="manager" to="/vipmenber">我的</van-tabbar-item>
     </van-tabbar>
   </div>
 </template>

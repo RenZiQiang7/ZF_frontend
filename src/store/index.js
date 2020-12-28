@@ -5,6 +5,13 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    personalInfo:{
+      nickName:"菲菲",
+      name:"卢大炮",
+      gender:0,
+      mobile:18512345678
+    },
+    showFooter:"true",
     title: "首页",
     defaultAddress: {
       id: '1',
@@ -32,20 +39,37 @@ export default new Vuex.Store({
 
 
   mutations: {
+   
     setTitle(state, title) {
       state.title = title;
 
+    },
+    insertAddress(state, address) {
+      state.address.push(address);
+      window.localStorage.setItem('address', JSON.stringify(state.address));
+    },
+    showFooter(state,bool){
+      state.showFooter=bool;
+    },
 
+    setNickName(state,nickName){
+      state.personalInfo.nickName=nickName;
     },
-    mutations: {
-      insertAddress(state, address) {
-        state.address.push(address);
-        window.localStorage.setItem('address', JSON.stringify(state.address));
-      }
+    setName(state,name){
+      state.personalInfo.name=name;
     },
-    actions: {
+    setGender(state,gender){
+      state.personalInfo.gender=gender;
     },
-    modules: {
-    }
+    setMobile(state,mobile){
+      state.personalInfo.mobile=mobile;
+    },
+    
+  },
+
+  actions: {
+  },
+  modules: {
   }
+
 })

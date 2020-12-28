@@ -17,9 +17,22 @@ import { NavBar } from "vant";
 
 Vue.use(NavBar);
 export default {
+  //   updated(){
+  //  console.log(this.$route.path);
+  //   },
   methods: {
     onClickLeft() {
-      this.$router.go(-1);
+      // this.$store.state.headerBack
+      console.log(this.$route.path);
+      if (this.$route.path == "/bookroom") {
+        this.$router.push("/reserve");
+      } else if (this.$route.path == "/pay") {
+        this.$router.push("/reserve");
+      } else if(this.$route.path == "/personal"){
+        this.$router.push("/vipmenber")
+      }else {
+        this.$router.go(-1);
+      }
     },
   },
 };

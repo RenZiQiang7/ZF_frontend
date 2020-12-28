@@ -5,7 +5,7 @@
       <div>{{this.$store.state.title}}</div>
     </Header>
     <router-view />
-    <Footer />
+    <Footer v-show="$store.state.showFooter"/>
   </div>
 </template>
 
@@ -14,7 +14,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 export default {
   data:function(){
-    
+    return{}
   },
   components: {
     Header,

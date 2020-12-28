@@ -207,7 +207,7 @@ export default {
       this.coupons.push(coupon);
     },
     onSubmit(){
-
+      this.$router.push({name:"pay",params:{money:this.pay}})
     },
     incre(){
         if(this.checked){
@@ -218,7 +218,7 @@ export default {
     }
   },
   created() {
-    this.$store.commit('setTitle',"支付订单")
+    this.$store.commit('setTitle',"填写订单")
     this.res = this.$route.params;
     this.pay=this.res.price;
     console.log(this.res);

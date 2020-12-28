@@ -1,11 +1,11 @@
 <template>
     <div >
          <van-cell title="头像" is-link />
-        <van-cell is-link title="昵称" @click="gocname" />
-         <van-cell is-link title="姓名" @click="goname" />
-        <van-cell is-link title="性别" @click="show = true" />
+        <van-cell is-link title="昵称" @click="gocname" :value="$store.state.personalInfo.nickName"/>
+         <van-cell is-link title="姓名" @click="goname" :value="$store.state.personalInfo.name"/>
+        <van-cell is-link title="性别" @click="show = true" :value="$store.state.personalInfo.gender==1?'男':'女'"/>
 <van-action-sheet v-model="show" :actions="actions" @select="onSelect" />
-        <van-cell is-link title="手机" @click="gomoble" />
+        <van-cell is-link title="手机" @click="gomoble" :value="$store.state.personalInfo.mobile"/>
 
     </div>
 </template>
@@ -26,17 +26,22 @@ export default {
     return {
       show: false,
       actions: [{ name: '男' }, { name: '女' }, { name: '取消' }],
+      personalInfo:{},
       
     };
   },
 
   created(){
    this.$store.commit("setTitle","修改个人信息")
+   this.personalInfo=this.$store.state.personalInfo;
+   this.personalInfo.gender=this.personalInfo.gender===0?"女":"男";
   },
   methods: {
     onSelect(item) {
       this.show = false;
-      Toast(item.name);
+  
+      this.$store.commit('setGender',item.name=="男"?1:0)
+
     },
     goname(){
         this.$router.push("/name")
