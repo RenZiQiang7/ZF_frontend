@@ -43,7 +43,7 @@
       <span
         class="tit"
         style="font-size: 14px; line-height: 24px; color: #323233"
-        >微信支付</span
+        >余额支付</span
       >
 
     
