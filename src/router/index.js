@@ -8,6 +8,10 @@ import BillRouter from './routes/Bill/Bill';
 import Pysuccess from './routes/pysuccess/Pysuccess';
 import AddressRouter from './routes/Address/Address';
 
+import goodsListRouter from "./routes/goodslist";
+import DetailRouter from "./routes/detail";
+import FillRouter from "./routes/fillorder";
+import payRouter from "./routes/pay"
 const routes = [
   ...BillRouter,
   ...PerRouter,
@@ -15,6 +19,10 @@ const routes = [
   ...Pysuccess,
   ...AddressRouter,
 
+  goodsListRouter,
+  DetailRouter,
+  FillRouter,
+  payRouter,
 ]
 
 const router = new VueRouter({
