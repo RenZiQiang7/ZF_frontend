@@ -4,6 +4,12 @@ import VueRouter from 'vue-router'
 
 
 Vue.use(VueRouter)
+import PerRouter from './routes/personal';
+import VipRouter from './routes/Vipmember/Vipmenber';
+import BillRouter from './routes/Bill/Bill';
+import Pysuccess from './routes/pysuccess/Pysuccess';
+import AddressRouter from './routes/Address/Address';
+
 import goodsListRouter from "./routes/goodslist";
 import DetailRouter from "./routes/detail";
 import FillRouter from "./routes/fillorder";
@@ -13,6 +19,12 @@ import ReserveRouter from './routes/reserve/Reserve'
 import RoomDetailRouter from './routes/RoomDetail'
 import bookRoomRouter from './routes/reservation/bookroom'
 const routes = [
+  ...BillRouter,
+  ...PerRouter,
+  ...VipRouter,
+  ...Pysuccess,
+  ...AddressRouter,
+
   goodsListRouter,
   DetailRouter,
   FillRouter,
