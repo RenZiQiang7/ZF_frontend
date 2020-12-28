@@ -68,6 +68,7 @@ export default {
   },
   created() {
     this.$store.commit('setTitle',"商品详情")
+    this.$store.commit('showFooter',false);
     let res = this.$route.params;
     this.res = res;
     console.log(res);
