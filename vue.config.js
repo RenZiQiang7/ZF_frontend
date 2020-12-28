@@ -13,7 +13,7 @@ module.exports = {
             "/v1": {
                 // 把相对地址中的域名 映射到 目标地址中
                 // localhost:3000 => https://api.iynn.cn/film/api/v1/
-                target: "https://www.fastmock.site/mock/94a201babc006a58afc0f20e54e03868/v1",
+                target: "https://www.fastmock.site/mock/67d195564a29ec00bacab392c51f04ba/v1",
                 // 修改host请求的域名为目标域名
                 // changeOrigin: false,
                 changeOrigin: true,
