@@ -27,10 +27,10 @@
 
         <div class="ip2">
             <span style="font-size:14px">物流详情</span>
-          <van-steps direction="vertical" :active="0">
+          <van-steps direction="vertical" :active="8">
   <van-step>
     <h3>
-订单已签收，期待再次为您服务</h3>
+      订单已签收，期待再次为您服务</h3>
     <p>2017-04-01 12:00:00 </p>
   </van-step>
   <van-step>
@@ -83,6 +83,7 @@ export default {
   created() {
     this.$store.commit("showFooter",false)
     this.$store.commit("setTitle","订单跟踪")
+   
   },
    destroyed(){
         this.$store.commit("showFooter",true)

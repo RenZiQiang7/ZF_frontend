@@ -64,14 +64,14 @@
         </table>
       </div>
 
-      <div>
+      <!-- <div>
         <h2>店内设施</h2>
         <img
           src="@/assets/u10384.png"
           alt=""
        
         />
-      </div>
+      </div> -->
     </div>
 
     <div class="section3">
