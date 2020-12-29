@@ -1,7 +1,6 @@
 let prefix='/v1/'
 
 export default{
-      // 城市信息获取
       login: prefix + "login",
       viplist:prefix + "viplist",
       integ:prefix + "integ",
@@ -25,5 +24,6 @@ export default{
       Order4: prefix + "Order4",
       Order5: prefix + "Order5",
       Tail: prefix + "Tail",
+      Topup: prefix + "Topup",
    
 }

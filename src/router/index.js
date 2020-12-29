@@ -23,6 +23,7 @@ import goodsOrderRouter from './routes/goodsorder/goodsorder'
 import DiscountRouter from "./routes/Discount/Discount"
 import IntRouter  from "./routes/Integral/Integral"
 import OrderRouter  from "./routes/Order/Order"
+import TopupRouter  from "./routes/Topup/Topup"
 
 
 import QRcodeRouter from './routes/QRcode'
@@ -35,6 +36,7 @@ const routes = [
   ...DiscountRouter,
   ...IntRouter,
   ...OrderRouter,
+  ...TopupRouter,
 
   goodsOrderRouter,
   goodsListRouter,
