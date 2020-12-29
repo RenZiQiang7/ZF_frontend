@@ -2,20 +2,20 @@
     <div class="top">
        <div class="top1" @click="gotoip">
       <van-icon name="point-gift" size="30px" color="#ffffff" class="top1-1"/>
-         <span class="top1-2">等待发货</span>
+         <span class="top1-2">等待收货</span>
          <div class="top3" >
             我们会尽快为您发货
          </div>
        </div>
           
-       <div class="ip">
-           <div class="ip1">
-        <span>张三</span><span>187****7605</span>
-        <br>
-        <span>广东省深圳市南山区科兴科学园
-</span>
-</div>
-       </div>
+          <div class="ip">
+      <div class="ip1">
+        <span>{{ list.address.name }}</span
+        ><span>{{ list.address.tel }}</span>
+        <br />
+        <span>{{ list.address.address }} </span>
+      </div>
+    </div>
 
 
       <div>
@@ -26,28 +26,24 @@
     </div>
     <div>
       <van-card
-        v-for="item in list"
+        v-for="item in list.goods"
         :key="item.id"
         :desc="item.info"
         :thumb="item.smallImg"
       >
         <template #title>
-          <span style="color: black; fontSize: 16px">
+          <span style="color: black; font-size: 16px">
             {{ item.name }}
           </span>
+           <span style="color: green; font-size: 16px; float: right"
+              >×{{ item.num }}</span
+            >
         </template>
         <template #price>
           <div>
-            <div style="color: red; fontSize: 18px">￥{{ item.price }}</div>
+            <div style="color: red; font-size: 18px">￥{{ item.price }}</div>
 
-            <van-button
-              size="small"
-              color="linear-gradient(to right, #ff6034, #ee0a24)"
-              class="button"
-              @click="gotoDetail(item)"
-            >
-              查看详情
-            </van-button>
+         
           </div>
         </template>
         <template> </template>
@@ -60,35 +56,36 @@
              <span>订单信息</span>
          </div>
          <div class="b2">
-         <span style="font-size:16px">商品合计:</span><span style="font-size:14px">￥99</span>
+         <span style="font-size:16px">商品合计:</span><span style="font-size:14px">￥{{ list.totalPay }}</span>
          </div>
          <div class="b2">
-         <span style="font-size:16px">优惠券:</span><span style="font-size:14px">-￥10</span>
+         <span style="font-size:16px">优惠券:</span><span style="font-size:14px">-￥{{ list.ticket }}</span>
          </div>
          <div class="b2">
-         <span style="font-size:16px">优惠抵扣:</span><span style="font-size:14px">￥0.00</span>
+         <span style="font-size:16px">积分抵扣:</span><span style="font-size:14px">￥{{ list.score }}</span>
          </div>
 
       </div>
       <div class="b1">
          
          <div class="b2">
-         <span style="font-size:16px">订单编号:</span><span style="font-size:14px">11977240</span>
+         <span style="font-size:16px">订单编号:</span><span style="font-size:14px">{{ list.orderId }}</span>
          </div>
          <div class="b2">
-         <span style="font-size:16px">提交时间:</span><span style="font-size:14px">2020-12-29 11:11</span>
+         <span style="font-size:16px">提交时间:</span><span style="font-size:14px">{{ list.commitTime }}</span>
          </div>
          <div class="b2">
-         <span style="font-size:16px">支付方式:</span><span style="font-size:14px">微信支付</span>
+         <span style="font-size:16px">支付方式:</span><span style="font-size:14px">{{ list.payType }}</span>
          </div>
       </div>
           <div class="bo">
-            <van-button color="linear-gradient(to right, #ff6034, #ee0a24)" >
+            <van-button color="linear-gradient(to right, #ff6034, #ee0a24)" @click="qrsh()">
  确认收货
 </van-button>
-<van-button color="#ccc" >
+<van-button color="#ccc"  @click="$router.push('/tail')">
  查看物流
 </van-button>
+         
           </div>
 
     </div>
@@ -96,7 +93,7 @@
 
 <script>
 import Vue from 'vue';
-import { Icon,CountDown,SubmitBar } from 'vant';
+import { Icon,CountDown,SubmitBar,Dialog ,Toast } from 'vant';
 
 Vue.use(Icon);
 Vue.use(CountDown);
@@ -106,7 +103,11 @@ import { Search, Card, Button } from "vant";
 Vue.use(Button);
 Vue.use(Card);
 Vue.use(Search);
+Vue.use(Toast);
 export default {
+  components: {
+    [Dialog.Component.name]: Dialog.Component,
+  },
     data() {
     return {
       time: 30 * 60 * 60 * 1000,
@@ -115,29 +116,32 @@ export default {
     };
   },
   methods: {
-    getData() {
-      this.$http.get("/v1/goodslist").then((ret) => {
-        console.log(ret);
-        this.list = ret;
-      });
-      
-    },
-    gotoDetail(item) {
-        this.$router.push({name:"detail",params:item});
-        },
+  
+   
         gotoip(){
         this.$router.push("/Tail");
-   }
+   },
+   qrsh() {
+      Dialog.confirm({
+        message: "是否确认收货？",
+      })
+        .then(() => {
+          // on confirm
+          Toast.success('已确认收货');
+         
+        })
+        .catch(() => {
+          // on cancel
+        });
+    },
         
   },
   created() {
-    this.getData();
+   this.list = this.$route.params;
     this.$store.commit('setTitle',"订单详情-待收货")
     this.$store.commit("showFooter",false)
   },
-   destroyed(){
-        this.$store.commit("showFooter",true)
-   }
+ 
 
 }
 </script>

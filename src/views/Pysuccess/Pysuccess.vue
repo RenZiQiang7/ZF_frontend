@@ -9,7 +9,7 @@
         </div>
 
         <div class="t4">
-            <button class="b1">查看订单</button><br>
+          
             <button class="b2" @click="togo">返回首页</button>
         </div>
     </div>

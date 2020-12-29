@@ -12,6 +12,14 @@
           </div>
        </div>
 
+   <div class="ip">
+      <div class="ip1">
+        <span>{{ list.address.name }}</span
+        ><span>{{ list.address.tel }}</span>
+        <br />
+        <span>{{ list.address.address }} </span>
+      </div>
+    </div>
 
       <div>
           <div class="top6">
@@ -21,28 +29,24 @@
     </div>
     <div>
       <van-card
-        v-for="item in list"
+        v-for="item in list.goods"
         :key="item.id"
         :desc="item.info"
         :thumb="item.smallImg"
       >
         <template #title>
-          <span style="color: black; fontSize: 16px">
+          <span style="color: black; font-size: 16px">
             {{ item.name }}
           </span>
+           <span style="color: green; font-size: 16px; float: right"
+              >×{{ item.num }}</span
+            >
         </template>
         <template #price>
           <div>
-            <div style="color: red; fontSize: 18px">￥{{ item.price }}</div>
+            <div style="color: red; font-size: 18px">￥{{ item.price }}</div>
 
-            <van-button
-              size="small"
-              color="linear-gradient(to right, #ff6034, #ee0a24)"
-              class="button"
-              @click="gotoDetail(item)"
-            >
-              查看详情
-            </van-button>
+           
           </div>
         </template>
         <template> </template>
@@ -55,32 +59,32 @@
              <span>订单信息</span>
          </div>
          <div class="b2">
-         <span style="font-size:16px">商品合计:</span><span style="font-size:14px">￥99</span>
+         <span style="font-size:16px">商品合计:</span><span style="font-size:14px">￥{{ list.totalPay }}</span>
          </div>
          <div class="b2">
-         <span style="font-size:16px">优惠券:</span><span style="font-size:14px">-￥10</span>
+         <span style="font-size:16px">优惠券:</span><span style="font-size:14px">-￥{{ list.ticket }}</span>
          </div>
          <div class="b2">
-         <span style="font-size:16px">优惠抵扣:</span><span style="font-size:14px">￥0.00</span>
+         <span style="font-size:16px">优惠抵扣:</span><span style="font-size:14px">￥{{ list.score }}</span>
          </div>
 
       </div>
       <div class="b1">
          
          <div class="b2">
-         <span style="font-size:16px">订单编号:</span><span style="font-size:14px">11977240</span>
+         <span style="font-size:16px">订单编号:</span><span style="font-size:14px">{{ list.orderId }}</span>
          </div>
          <div class="b2">
-         <span style="font-size:16px">提交时间:</span><span style="font-size:14px">2020-12-29 11:11</span>
+         <span style="font-size:16px">提交时间:</span><span style="font-size:14px">{{ list.commitTime }}</span>
          </div>
          <div class="b2">
-         <span style="font-size:16px">支付方式:</span><span style="font-size:14px">微信支付</span>
+         <span style="font-size:16px">支付方式:</span><span style="font-size:14px">{{ list.payType }}</span>
          </div>
          <div class="b2">
-         <span style="font-size:16px">实付金额:</span><span style="font-size:14px">￥180</span>
+         <span style="font-size:16px">实付金额:</span><span style="font-size:14px">{{list.realPay}}</span>
          </div>
          <div class="b2">
-         <span style="font-size:16px">付款时间:</span><span style="font-size:14px">2020-12-29 11:11</span>
+         <span style="font-size:16px">付款时间:</span><span style="font-size:14px">{{list.payTime}}</span>
          </div>
       </div>
           <div class="bo">
@@ -97,12 +101,12 @@
 
 <script>
 import Vue from 'vue';
-import { Icon,CountDown,SubmitBar } from 'vant';
+import { Icon,CountDown,SubmitBar ,Search, Card, Button} from 'vant';
 
 Vue.use(Icon);
 Vue.use(CountDown);
 Vue.use(SubmitBar);
-import { Search, Card, Button } from "vant";
+
 
 Vue.use(Button);
 Vue.use(Card);
@@ -116,15 +120,8 @@ export default {
     };
   },
   methods: {
-    getData() {
-      this.$http.get("/v1/goodslist").then((ret) => {
-        console.log(ret);
-        this.list = ret;
-      });
-    },
-    gotoDetail(item) {
-        this.$router.push({name:"detail",params:item});
-        },
+   
+  
          gogm(){
             this.$router.push("/goodslist");
         },
@@ -137,13 +134,11 @@ export default {
         
   },
   created() {
-    this.getData();
+   this.list = this.$route.params;
     this.$store.commit('setTitle',"订单详情-已完成")
     this.$store.commit("showFooter",false)
   },
-   destroyed(){
-        this.$store.commit("showFooter",true)
-   },
+   
   
 
 }
@@ -211,7 +206,7 @@ font-size: 15px;
   .ip1{
       margin-top: 20px;
       margin-left: 20px;
-      line-height: 80px;
+    
   }
 
   .top6 {

@@ -13,15 +13,19 @@
           :key="item.id"
           :desc="item.info"
           :thumb="item.smallImg"
+            @click="go(v)"
         >
           <template #title>
-            <span style="color: black; fontsize: 16px">
+            <span style="color: black; font-size: 16px">
               {{ item.name }}
             </span>
+             <span style="color: green; font-size: 16px; float: right"
+              >×{{ item.num }}</span
+            >
           </template>
           <template #price>
             <div>
-              <div style="color: red; fontsize: 18px">￥{{ item.price }}</div>
+              <div style="color: red; font-size: 18px">￥{{ item.price }}</div>
             </div>
           </template>
         </van-card>
@@ -67,10 +71,20 @@ export default {
   methods: {
     getData() {
       this.$http.get("/v1/tosendgoodsorders").then((ret) => {
-        console.log(ret);
+      
         this.list=ret.data;
         this.loadmore=false;
       });
+    },
+     go(v){
+      switch(v.orderState){
+        case "等待付款": this.$router.push({name:"dfk",params:v});break;
+        case "等待发货": this.$router.push({name:"dfh",params:v});break;
+        case "等待收货": this.$router.push({name:"dsh",params:v});break;
+        case "交易完成": this.$router.push({name:"ywc",params:v});break;
+        case "交易关闭": this.$router.push({name:"ygb",params:v});break;
+
+      }
     },
    
   },

@@ -12,10 +12,10 @@
          <div class="x1-1" @click="goBill()">
           余额:0
          </div>
-         <div class="x1-2">
+         <div class="x1-2" @click="showjf">
           积分:0
          </div>
-         <div class="x1-3">
+         <div class="x1-3" @click="goDiscount">
            优惠券:0
          </div>
        </div>
@@ -23,11 +23,9 @@
            <button>会员充值</button>
        </div>
        
+   
        <div>
-           <van-cell is-link >客房订单</van-cell>
-       </div>
-       <div>
-           <van-cell is-link >商品订单</van-cell>
+           <van-cell is-link @click="$router.push('/goodsorder')">商品订单</van-cell>
        </div>
        <div>
            <van-cell is-link @click="goBill()">账单</van-cell>

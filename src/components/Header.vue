@@ -30,7 +30,12 @@ export default {
         this.$router.push("/home");
       } else if(this.$route.path == "/personal"){
         this.$router.push("/vipmenber")
-      }else {
+      }else if(this.$route.path.indexOf('goodsorder')!=-1){
+        this.$router.push("/vipmenber")
+      }else if(this.$route.path == "/tail"){
+        this.$router.push("/goodsorder")
+      }
+      else {
         this.$router.go(-1);
       }
     },
