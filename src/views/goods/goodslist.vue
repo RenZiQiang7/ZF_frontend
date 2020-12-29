@@ -39,7 +39,6 @@
             </van-button>
           </div>
         </template>
-        <template> </template>
       </van-card>
     </div>
   </div>

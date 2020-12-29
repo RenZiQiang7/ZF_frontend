@@ -16,7 +16,7 @@
           积分:0
          </div>
          <div class="x1-3">
-           优惠卷:0
+           优惠券:0
          </div>
        </div>
        <div class="k">
@@ -36,11 +36,15 @@
            <van-cell is-link @click="showPopup">积分查询</van-cell>
        </div>
        <div>
-           <van-cell is-link @click="showPopup">优惠卷</van-cell>
+           <van-cell is-link @click="showPopup">优惠券</van-cell>
        </div>
        <div>
            <van-cell is-link @click="$router.push('/address')">地址管理</van-cell>
        </div>
+       <div>
+           <van-cell is-link @click="$router.push('/suggest')">投诉建议</van-cell>
+       </div>
+       
        
        
        
@@ -157,6 +161,6 @@ button{
 }
 .main{
     margin-top: 50px;
-    margin-bottom: 50px;
+    margin-bottom: 80px;
 }
 </style>

@@ -23,11 +23,11 @@ export default {
   methods: {
     onClickLeft() {
       // this.$store.state.headerBack
-      console.log(this.$route.path);
+      console.log(this.$route);
       if (this.$route.path == "/bookroom") {
         this.$router.push("/reserve");
       } else if (this.$route.path == "/pay") {
-        this.$router.push("/reserve");
+        this.$router.push("/home");
       } else if(this.$route.path == "/personal"){
         this.$router.push("/vipmenber")
       }else {
