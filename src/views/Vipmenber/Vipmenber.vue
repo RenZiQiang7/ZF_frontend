@@ -16,7 +16,7 @@
           积分:0
          </div>
          <div class="x1-3">
-           优惠卷:0
+           优惠券:0
          </div>
        </div>
        <div class="k">
@@ -24,19 +24,19 @@
        </div>
        
        <div>
-           <van-cell is-link @click="showPopup">客房订单</van-cell>
+           <van-cell is-link >客房订单</van-cell>
        </div>
        <div>
-           <van-cell is-link @click="showPopup">商品订单</van-cell>
+           <van-cell is-link >商品订单</van-cell>
        </div>
        <div>
            <van-cell is-link @click="goBill()">账单</van-cell>
        </div>
        <div>
-           <van-cell is-link @click="showPopup">积分查询</van-cell>
+           <van-cell is-link @click="showjf">积分查询</van-cell>
        </div>
        <div>
-           <van-cell is-link @click="showPopup">优惠卷</van-cell>
+           <van-cell is-link @click="goDiscount">优惠券</van-cell>
        </div>
        <div>
            <van-cell is-link @click="$router.push('/address')">地址管理</van-cell>
@@ -64,7 +64,11 @@ export default {
   },
 
   methods: {
-    showPopup() {
+      showjf(){
+      this.$router.push('/Integral')
+      },
+    goDiscount() {
+         this.$router.push('/Discount')
     },
     goPersonal(){
         this.$router.push('/personal')
@@ -131,7 +135,7 @@ export default {
     line-height: 80px;
 }
 .k{
-    margin-left: 120px;
+    margin-left: 150px;
     margin-top: 10px;
 }
 .bottom{

@@ -18,12 +18,20 @@ import HomeRouter from './routes/Home/Home'
 import ReserveRouter from './routes/reserve/Reserve'
 import RoomDetailRouter from './routes/RoomDetail'
 import bookRoomRouter from './routes/reservation/bookroom'
+import DiscountRouter from "./routes/Discount/Discount"
+import IntRouter  from "./routes/Integral/Integral"
+import OrderRouter  from "./routes/Order/Order"
+
+
 const routes = [
   ...BillRouter,
   ...PerRouter,
   ...VipRouter,
   ...Pysuccess,
   ...AddressRouter,
+  ...DiscountRouter,
+  ...IntRouter,
+  ...OrderRouter,
 
   goodsListRouter,
   DetailRouter,

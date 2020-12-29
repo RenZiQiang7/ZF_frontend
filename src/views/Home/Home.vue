@@ -111,10 +111,10 @@ export default {
   data() {
     return {
       images: [
-        "http://cloud.axureshop.com/gsc/TIQ0AB/69/6f/10/696f1013c84347a5b631f42f4f41f1a6/images/酒店首页/u10350.jpg?token=082d45239c143b84582ad4376b6a7f2f08c6ab0a3940cc27785c1c24f508d9cf",
-        "http://cloud.axureshop.com/gsc/TIQ0AB/69/6f/10/696f1013c84347a5b631f42f4f41f1a6/images/%E9%85%92%E5%BA%97%E9%A6%96%E9%A1%B5/u10351.jpg?token=67409a0e30503e69c3ed0d08a0eadbfc461fca792ac8187c31f11a9b66ec4450",
-        "http://cloud.axureshop.com/gsc/TIQ0AB/69/6f/10/696f1013c84347a5b631f42f4f41f1a6/images/%E9%85%92%E5%BA%97%E9%A6%96%E9%A1%B5/u10352.jpg?token=8e7d8dbb88a6f2ec70d53dbc4f2b98122486264ab025c04576aa3fb0f9d72252",
-        "http://cloud.axureshop.com/gsc/TIQ0AB/69/6f/10/696f1013c84347a5b631f42f4f41f1a6/images/%E9%85%92%E5%BA%97%E9%A6%96%E9%A1%B5/u10353.jpg?token=6d6ad411af1103972addef54989f9deff4e7c216499dfabebc1a85120cc07808",
+        "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1102775464,2550323664&fm=26&gp=0.jpg",
+        "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=600645625,3691875155&fm=26&gp=0.jpg",
+        "https://gimg2.baidu.com/image_search/src=http%3A%2F%2F00imgmini.eastday.com%2Fmobile%2F20181010%2F20181010034135_e8436f2d71c5f10b817111e2f5976f37_1.jpeg&refer=http%3A%2F%2F00imgmini.eastday.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1611793043&t=19c56a172e58c2e04eda7281ae799290",
+        "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3461531853,3499778930&fm=26&gp=0.jpg",
       ],
     };
   },
@@ -145,6 +145,7 @@ img {
   #banner {
     height: 221px;
     width: 100%;
+    overflow: hidden;
   }
   .address {
     font-family: "PingFangSC-Regular", "PingFang SC";
