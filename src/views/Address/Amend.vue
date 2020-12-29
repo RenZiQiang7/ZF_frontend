@@ -17,7 +17,7 @@
 
 <script>
 import Vue from 'vue';
-import { AddressEdit, Toast,Area } from 'vant';
+import { AddressEdit,Toast,Area } from 'vant';
 
 Vue.use(AddressEdit);
 Vue.use(Toast);
@@ -4077,15 +4077,26 @@ export default {
   },
   created(){
   this.$store.commit("setTitle","修改地址")
+
   },
   methods: {
 
-    onSave() {
-      Toast('save');
-      
+    onSave(content) {
+      console.log(content); 
+      this.$store.commit('setAddrName',[this.$route.query.index,content.name]);
+      this.$store.commit('setAddrTel',[this.$route.query.index,content.tel]);
+      this.$store.commit('setAddrAddress',[this.$route.query.index,content.province+content.city+content.county]);
+        Toast('修改成功')
+       setTimeout(() => {
+          this.$router.push('/address')
+       }, 2000);
     },
     onDelete() {
-      
+       this.$store.commit('delAddr',this.$route.query.index);
+       Toast('删除成功')
+       setTimeout(() => {
+          this.$router.push('/address')
+       }, 2000);
     },
     
     onChangeDetail(val) {

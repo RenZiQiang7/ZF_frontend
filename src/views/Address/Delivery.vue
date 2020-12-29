@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="main">
    <van-address-edit
   :area-list="areaList"
   show-postal
@@ -4081,7 +4081,8 @@ export default {
   methods: {
     onSave(val) {
       this.list = val;
-      this.$store.commit("insertAddress",this.list)
+        console.log(this.list);
+      this.$store.commit("insertAddress",{id:"",name:val.name,tel:val.tel,address:val.province+val.city+val.county})
       this.$router.push("/Address")
     },
     
@@ -4101,3 +4102,10 @@ export default {
   },
 }
 </script>
+
+<style lang="scss" scoped>
+  .main{
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+</style>

@@ -18,6 +18,7 @@ import HomeRouter from './routes/Home/Home'
 import ReserveRouter from './routes/reserve/Reserve'
 import RoomDetailRouter from './routes/RoomDetail'
 import bookRoomRouter from './routes/reservation/bookroom'
+import QRcodeRouter from './routes/QRcode'
 const routes = [
   ...BillRouter,
   ...PerRouter,
@@ -29,7 +30,7 @@ const routes = [
   DetailRouter,
   FillRouter,
   payRouter,
-
+  QRcodeRouter,
 
 
   HomeRouter,
