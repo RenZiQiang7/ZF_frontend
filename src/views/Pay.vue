@@ -38,6 +38,7 @@
         padding-right: 10px;
         height: 25px;
       "
+      @click="$router.push('/pysuccess')"
     >
       <van-icon
         name="wechat"
@@ -59,23 +60,26 @@
         padding-right: 10px;
         height: 25px;
       "
+      @click="$router.push('/pysuccess')"
     >
       <van-icon
-        name="wechat"
+        name="alipay"
         style="vertical-align: middle; margin-right: 10px"
       />
       <span
         class="tit"
         style="font-size: 14px; line-height: 24px; color: #323233"
-        >余额支付</span
+        >支付宝支付</span
       >
     </div>
+   
   </div>
 </template>
 <script>
 import Vue from "vue";
-import { Icon, CountDown } from "vant";
+import { Icon, CountDown, Popup } from "vant";
 
+Vue.use(Popup);
 Vue.use(Icon);
 Vue.use(CountDown);
 export default {
@@ -83,21 +87,52 @@ export default {
     return {
       time: 30 * 60 * 60 * 1000,
       money: 0,
+      show: false,
+      trade_no:"",
     };
   },
   created() {
     this.$store.commit("setTitle", "支付订单");
-    this.$store.commit('showFooter',false);
+    this.$store.commit("showFooter", false);
 
     let money = this.$route.params.money;
+
     if (money) {
-      this.money = money;
+      this.money = parseInt(money);
+    };
+
+  },
+  destroyed() {
+    this.$store.commit("showFooter", true);
+  },
+  methods: {
+    // showAlipay() {
+    //   // 跳转至支付宝页面付款
+    //   this.$http.get('https://m.28sjw.com/alipay_wap/alipayapi.php',{
+    //     params:{WIDout_trade_no:this.randomTradeNo(),WIDsubject:"buy",WIDsubject:0.01}
+    //   });
+    // },
+
+
+    randomTradeNo(){
+      var str = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+      var vc = '';
+
+      for (var i = 1; i <= 12; i++) {
+          // 从 0 - str.length-1 的所有索引下标的随机数
+          var num = parseInt(Math.random() * str.length);
+
+          if (vc.indexOf(str[num]) === -1) {
+              vc += str[num];
+          } else {
+              i--;
+          }
+      }
+      this.trade_no=vc;
+      return vc;
     }
   },
-  destroyed(){
-     this.$store.commit('showFooter',true);
-  
-  }
 };
 </script>
 <style lang="scss" scoped>

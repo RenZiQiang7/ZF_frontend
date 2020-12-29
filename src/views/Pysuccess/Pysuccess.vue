@@ -27,7 +27,7 @@ export default {
     },
     methods:{
         togo(){
-            this.$router.go(-1)
+            this.$router.push('/goodslist')
         }
     },
     created(){
@@ -39,7 +39,7 @@ export default {
 <style lang="scss" scoped>
 .t1{
     width: 90%;
-    height: 400px;
+    height: 100%;
    background: rgb(245, 245, 245);
     margin: 0 auto;
     position: relative;

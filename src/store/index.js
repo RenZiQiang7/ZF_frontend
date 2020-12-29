@@ -33,7 +33,7 @@ export default new Vuex.Store({
         name: '李四',
         tel: '1310000000',
         address: '浙江省杭州市拱墅区莫干山路 50 号',
-      },
+      }
     ],
   },
 
@@ -45,13 +45,14 @@ export default new Vuex.Store({
 
     },
     insertAddress(state, address) {
+      console.log(state.address);
       state.address.push(address);
       window.localStorage.setItem('address', JSON.stringify(state.address));
     },
     showFooter(state,bool){
       state.showFooter=bool;
     },
-
+// 修改个人信息方法=========================================
     setNickName(state,nickName){
       state.personalInfo.nickName=nickName;
     },
@@ -64,6 +65,31 @@ export default new Vuex.Store({
     setMobile(state,mobile){
       state.personalInfo.mobile=mobile;
     },
+// ====================================================
+
+// 修改收货地址方法================================================================
+    setAddrName(state,arg){
+      let index=parseInt(arg[0])
+
+      state.address[index].name=arg[1];
+    },
+    setAddrTel(state,arg){
+      let index=parseInt(arg[0])
+      state.address[index].tel=arg[1];
+    },
+    setAddrAddress(state,arg){
+      let index=parseInt(arg[0])
+      state.address[index].address=arg[1];
+    },
+  
+    //删除一个收货地址
+    delAddr(state,index){
+      state.address.splice(index,1);
+    }
+
+
+// ===============================================================================
+
     
   },
 

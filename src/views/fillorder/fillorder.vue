@@ -183,8 +183,8 @@ export default {
     return {
       res: {},
       currentContact: {
-        name: "张三",
-        tel: "13000000000",
+        name: "",
+        tel: "",
       },
       chosenCoupon: -1,
       coupons: [coupon],
@@ -196,7 +196,15 @@ export default {
     pay:0,
     };
   },
- 
+ created() {
+    this.$store.commit('setTitle',"填写订单")
+    this.res = this.$route.params;
+    this.pay=this.res.price;
+    this.currentContact.name=this.$store.state.defaultAddress.name;
+   
+    this.currentContact.tel=this.$store.state.defaultAddress.tel;
+
+  },
   methods: {
     onEdit() {},
     onChange(index) {
@@ -217,12 +225,7 @@ export default {
         }
     }
   },
-  created() {
-    this.$store.commit('setTitle',"填写订单")
-    this.res = this.$route.params;
-    this.pay=this.res.price;
-    console.log(this.res);
-  },
+  
 };
 </script>
 

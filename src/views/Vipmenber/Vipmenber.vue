@@ -9,7 +9,7 @@
        </div>
 
        <div class="x1">
-         <div class="x1-1">
+         <div class="x1-1" @click="goBill()">
           余额:0
          </div>
          <div class="x1-2">

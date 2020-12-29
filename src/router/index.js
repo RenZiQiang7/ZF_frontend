@@ -25,6 +25,7 @@ import IntRouter  from "./routes/Integral/Integral"
 import OrderRouter  from "./routes/Order/Order"
 
 
+import QRcodeRouter from './routes/QRcode'
 const routes = [
   ...BillRouter,
   ...PerRouter,
@@ -42,6 +43,8 @@ const routes = [
   payRouter,
 
   suggestRouter,
+  QRcodeRouter,
+
 
   HomeRouter,
   {
