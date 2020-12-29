@@ -84,8 +84,12 @@
          </div>
       </div>
           <div class="bo">
-            <button class="bo1" @click="goto">删除订单</button>
-            <button class="bo2" @click="gogm">再次购买</button>
+           <van-button color="linear-gradient(to right, #ff6034, #ee0a24)" @click="gogm">
+ 再次购买
+</van-button>
+<van-button color="#ccc" @click="goto">
+ 删除订单
+</van-button>
           </div>
 
     </div>
@@ -250,12 +254,12 @@ font-size: 15px;
     position: fixed;
     bottom:0;
     z-index: 100;
-    background: floralwhite;
+    background: #ffffff;
 }
 button{
     float: right;
     margin-top: 10px;
     margin-right: 10px;
-    border: 1px solid black;
+  
 }
 </style>
