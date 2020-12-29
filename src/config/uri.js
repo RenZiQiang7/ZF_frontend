@@ -17,12 +17,13 @@ export default{
       Address:prefix + "Address",
       Delivery:prefix + "Delivery",
       Amend:prefix + "Amend",
-
-      // // 正在热映数据获取
-      // getNowPlaying: prefix + "getNowPlayingFilmList",
-      // // 即将上映数据获取
-      // getComingSoon: prefix + "getComingSoonFilmList",
-      // //电影详情获取
-      // getFilmInfo:prefix+"getFilmInfo",
+      Discount:prefix + "Discount",
+      Integral:prefix + "Integral",
+      Order1: prefix + "Order1",
+      Order2: prefix + "Order2",
+      Order3: prefix + "Order3",
+      Order4: prefix + "Order4",
+      Order5: prefix + "Order5",
+      Tail: prefix + "Tail",
    
 }

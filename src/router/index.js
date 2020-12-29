@@ -20,12 +20,20 @@ import RoomDetailRouter from './routes/RoomDetail'
 import bookRoomRouter from './routes/reservation/bookroom'
 import suggestRouter from './routes/suggest/suggest'
 import goodsOrderRouter from './routes/goodsorder/goodsorder'
+import DiscountRouter from "./routes/Discount/Discount"
+import IntRouter  from "./routes/Integral/Integral"
+import OrderRouter  from "./routes/Order/Order"
+
+
 const routes = [
   ...BillRouter,
   ...PerRouter,
   ...VipRouter,
   ...Pysuccess,
   ...AddressRouter,
+  ...DiscountRouter,
+  ...IntRouter,
+  ...OrderRouter,
 
   goodsOrderRouter,
   goodsListRouter,

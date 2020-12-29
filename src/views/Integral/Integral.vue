@@ -9,35 +9,35 @@
         <div class="top1">
          <van-cell title="2020-12-28" :value="date" @click="show = true" class="top1-1"/>
 <van-calendar v-model="show" @confirm="onConfirm" />
-    <span class="top1-2">消费：￥1103.00</span> <span class="top1-3">充值：100.00</span>
+    <span class="top1-2">收入：￥1103.00</span> <span class="top1-3">支出：100.00</span>
         </div>
         <div class="bottom">
-           <div>
-               <span class="bottom1">消费</span><span class="bottom2">-100.00</span>
+           <div @click="goto">
+               <span class="bottom1">支出</span><span class="bottom2">-100.00</span>
                <br>
                <span style="font-size:12px">2020-12-28 9:07</span>
            </div>
            <hr>
-             <div>
-               <span class="bottom1">充值</span><span class="bottom2" style="color:orange">+203.00</span>
+             <div @click="goto">
+               <span class="bottom1">收入</span><span class="bottom2" style="color:orange">+203.00</span>
                <br>
                <span style="font-size:12px">2020-12-28 9:07</span>
            </div>
            <hr>
-            <div>
-               <span class="bottom1">消费</span><span class="bottom2">-432.00</span>
+            <div @click="goto">
+               <span class="bottom1">支出</span><span class="bottom2">-432.00</span>
                <br>
                <span style="font-size:12px">2020-12-28 9:07</span>
            </div>
            <hr>
-            <div>
-               <span class="bottom1">消费</span><span class="bottom2">-666.00</span>
+            <div @click="goto">
+               <span class="bottom1">支出</span><span class="bottom2">-666.00</span>
                <br>
                <span style="font-size:12px">2020-12-28 9:07</span>
            </div>
            <hr>
-           <div>
-               <span class="bottom1">充值</span><span class="bottom2" style="color:orange">+666.00</span>
+           <div @click="goto">
+               <span class="bottom1">收入</span><span class="bottom2" style="color:orange">+666.00</span>
                <br>
                <span style="font-size:12px">2020-12-28 9:07</span>
            </div>
@@ -71,8 +71,8 @@ export default {
       value1: 0,
       option1: [
         { text: '全部', value: 0 },
-        { text: '消费', value: 1 },
-        { text: '充值', value: 2 },
+        { text: '收入', value: 1 },
+        { text: '支出', value: 2 },
       ],
        date: '',
       show: false,
@@ -89,6 +89,9 @@ export default {
       this.show = false;
       this.date = this.formatDate(date);
     },
+    goto(){
+        this.$router.push("/Particulars");
+    }
   },
 }
 </script>

@@ -58,10 +58,10 @@ export default {
   data() {
     return {
       images: [
-        "http://cloud.axureshop.com/gsc/TIQ0AB/69/6f/10/696f1013c84347a5b631f42f4f41f1a6/images/酒店首页/u10350.jpg?token=082d45239c143b84582ad4376b6a7f2f08c6ab0a3940cc27785c1c24f508d9cf",
-        "http://cloud.axureshop.com/gsc/TIQ0AB/69/6f/10/696f1013c84347a5b631f42f4f41f1a6/images/酒店首页/u10351.jpg?token=67409a0e30503e69c3ed0d08a0eadbfc461fca792ac8187c31f11a9b66ec4450",
-        "http://cloud.axureshop.com/gsc/TIQ0AB/69/6f/10/696f1013c84347a5b631f42f4f41f1a6/images/酒店首页/u10352.jpg?token=8e7d8dbb88a6f2ec70d53dbc4f2b98122486264ab025c04576aa3fb0f9d72252",
-        "http://cloud.axureshop.com/gsc/TIQ0AB/69/6f/10/696f1013c84347a5b631f42f4f41f1a6/images/酒店首页/u10353.jpg?token=6d6ad411af1103972addef54989f9deff4e7c216499dfabebc1a85120cc07808",
+        "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fphoto.tuchong.com%2F5362112%2Ff%2F123012480.jpg&refer=http%3A%2F%2Fphoto.tuchong.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1611793412&t=4cb260bfb4fa447345399bc53a28037b",
+        "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Finews.gtimg.com%2Fnewsapp_match%2F0%2F12017277544%2F0.jpg&refer=http%3A%2F%2Finews.gtimg.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1611793446&t=a6a13a9612fb586d0ffab2c37b55ca65",
+        "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Finews.gtimg.com%2Fnewsapp_match%2F0%2F12128898854%2F0.jpg&refer=http%3A%2F%2Finews.gtimg.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1611793752&t=298be80df60aafdfed8e35ec39403421",
+        "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Finews.gtimg.com%2Fnewsapp_match%2F0%2F11950512394%2F0.jpg&refer=http%3A%2F%2Finews.gtimg.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1611793802&t=ab401414be907e93058f12efff45eebd",
       ],
       res: [],
     };
