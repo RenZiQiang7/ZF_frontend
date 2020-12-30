@@ -20,7 +20,7 @@
          </div>
        </div>
        <div class="k">
-           <button>会员充值</button>
+           <button @click="$router.push('/topup')">会员充值</button>
        </div>
        
    
